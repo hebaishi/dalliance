@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="../css/styles.css"/>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Dalliance pages</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="../index.html">Home</a>
+          </li>
+          <li class="active" >
+            <a href="html/hg38.html">hg38</a>
+          </li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <script language="javascript" src="http://www.biodalliance.org/release-0.13/dalliance-compiled.js"></script>
+  <script language="javascript">
+    new Browser({
+      chr: '22',
+      viewStart: 30000000,
+      viewEnd: 30030000,
+      cookieKey: 'human',
+
+      coordSystem: {
+        speciesName: 'Human',
+        taxon: 9606,
+        auth: 'NCBI',
+        version: '38',
+        ucscName: 'hg38'
+      },
+
+      sources: [
+        {
+          name: 'Genome',
+          twoBitURI: 'http://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/hg38.2bit',
+          desc: 'Human Genome Build hg19',
+          tier_type: 'sequence'
+        }, {
+          name: 'Genes',
+          desc: 'Gene structures from Ensembl 75',
+          bwgURI: 'http://hebaishi.github.io/dalliance/data/Homo_sapiens.GRCh37.75.bb',
+          stylesheet_uri: 'gencode.xml',
+          collapseSuperGroups: true,
+          provides_search: true,
+          trixURI: 'http://hebaishi.github.io/dalliance/data/Homo_sapiens.GRCh37.75.ix'
+        }, {
+          name: 'Repeats',
+          uri: 'http://www.derkholm.net:8080/das/hsa_54_36p/',
+          stylesheet_uri: 'http://www.derkholm.net/dalliance-test/stylesheets/ens-repeats.xml'
+        }, {
+          name: 'MeDIP raw',
+          uri: 'http://www.derkholm.net:8080/das/medipseq_reads'
+        }, {
+          name: 'MeDIP-seq',
+          uri: 'http://www.ebi.ac.uk/das-srv/genomicdas/das/batman_seq_SP/'
+        }
+      ]
+    });
+  </script>
+  <div class="jumbotron">
+    <div id="svgHolder"></div>
+  </div>
+
+</html>

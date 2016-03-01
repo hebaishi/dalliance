@@ -1,0 +1,12 @@
+.jumbotron {
+  margin-top: 70px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.row {
+  margin-bottom: 20px;
+}
