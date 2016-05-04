@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>Danio Rerio (danRer8/Zv10)</title>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/styles.css"/>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Dalliance pages</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="../index.html">Home</a>
+            </li>
+            <li>
+              <a href="hg38.html">hg38</a>
+            </li>
+            <li class="active">
+              <a href="zv10.html">zv10</a>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <script language="javascript" src="http://www.biodalliance.org/release-0.13/dalliance-compiled.js"></script>
+    <script language="javascript">
+      new Browser({
+        chr: '22',
+        viewStart: 30000000,
+        viewEnd: 30030000,
+        cookieKey: 'zebrafish',
+
+        coordSystem: {
+          speciesName: 'Human',
+          taxon: 9606,
+          auth: 'GRC',
+          version: 'z10',
+          ucscName: 'Zv10'
+        },
+
+        sources: [
+          {
+            name: 'Genome',
+            twoBitURI: 'http://hgdownload.cse.ucsc.edu/goldenPath/danRer10/bigZips/danRer10.2bit',
+            desc: 'Zebrafish build danRer10',
+            tier_type: 'sequence'
+          }, {
+            name: 'Genes',
+            desc: 'Gene structures from Ensembl 80',
+            bwgURI: 'http://hebaishi.github.io/dalliance/data/Danio_rerio.GRCz10.80.bb',
+            stylesheet_uri: 'http://hebaishi.github.io/dalliance/data/gencode.xml',
+            collapseSuperGroups: true,
+            provides_search: true,
+            trixURI: 'http://hebaishi.github.io/dalliance/data/Danio_rerio.GRCz10.80.ix'
+          }
+        ]
+      });
+    </script>
+    <div class="jumbotron">
+      <div id="svgHolder"></div>
+    </div>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  </body>
+</html>
